@@ -1,5 +1,5 @@
 import { Button, Form } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const AUTH_KEY =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEzYjZhZGM1NmIzNjAwMTMzZmU1NzAiLCJpYXQiOjE2ODA1MjI2MjcsImV4cCI6MTY4MTczMjIyN30.o95uQAsLLXkKapQuegwZnOjwLwi5er5rwl3OoGIczs8";
@@ -8,8 +8,13 @@ const BASE_URL = "https://striveschool-api.herokuapp.com/api/comments/";
 const AddComment = (props) => {
   const [comment, setComment] = useState("");
   const [rate, setRate] = useState("");
-  const [elementId, setElementId] = useState(props.asin);
+  const [elementId, setElementId] = useState("");
 
+  useEffect(() => {
+    setElementId(props.asin);
+  }, [props.asin]);
+
+  console.log(props);
   const sendComment = async (e) => {
     e.preventDefault();
 
