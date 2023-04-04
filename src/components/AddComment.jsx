@@ -7,7 +7,7 @@ const BASE_URL = "https://striveschool-api.herokuapp.com/api/comments/";
 
 const AddComment = (props) => {
   const [comment, setComment] = useState("");
-  const [rate, setRate] = useState("");
+  const [rate, setRate] = useState("1");
   const [elementId, setElementId] = useState("");
 
   useEffect(() => {
