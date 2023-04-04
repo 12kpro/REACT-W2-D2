@@ -14,7 +14,6 @@ const AddComment = (props) => {
     setElementId(props.asin);
   }, [props.asin]);
 
-  console.log(props);
   const sendComment = async (e) => {
     e.preventDefault();
 

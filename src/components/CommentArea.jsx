@@ -31,7 +31,7 @@ const CommentArea = (props) => {
   return (
     <div>
       <AddComment asin={props.asin} fetchComments={fetchComments} />
-      <CommentsList comments={comments} />
+      <CommentsList comments={comments} fetchComments={fetchComments} />
     </div>
   );
 };
